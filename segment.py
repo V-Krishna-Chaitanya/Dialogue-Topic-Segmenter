@@ -3,7 +3,7 @@ import torch
 import argparse
 import json
 from neural_texttiling import TextTiling
-from coherence_model import CoherenceNet
+from model_utils import CoherenceNet
 from tqdm import tqdm
 import numpy as np
 import warnings

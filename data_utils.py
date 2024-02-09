@@ -10,7 +10,7 @@ def load_txt(in_fname):
     id2txt = {}
     dup_dict = {}
     dup_list = []
-    with open(in_fname) as in_file:
+    with open(in_fname, encoding='utf-8') as in_file:
         for idx, line in enumerate(in_file):
             if line not in dup_dict.values():
                 id2txt[idx] = [utterance.replace(" __eou__","") for utterance in line.strip().split(" __eou__ ")]
