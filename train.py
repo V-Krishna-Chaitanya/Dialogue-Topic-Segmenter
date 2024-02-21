@@ -11,10 +11,14 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
+import sys
+
+print(f"Running Python version: {sys.version}")
+
 
 def parse_args():
     parser = argparse.ArgumentParser(usage='python train.py -t path/to/dataset -e aws-ai/dse-bert-base -s path/to/checkpoints -m 1')
-    parser.add_argument('-t', '--dataset', help='path of dataset for pseudo data generation', default='./data/train/dailydialog')
+    parser.add_argument('-t', '--dataset', help='path of dataset for pseudo data generation', default='./data/train/dailydialog/')
     parser.add_argument('-r', '--epochs', type=int, help='number of training epochs', default=10)
     parser.add_argument('-b', '--batch_size', type=int, help='batch size', default=24)
     parser.add_argument('-m', '--margin', type=float, help='hyper-parameter of marginal ranking loss',  default=1)
